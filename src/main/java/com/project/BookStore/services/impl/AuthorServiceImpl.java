@@ -2,9 +2,6 @@ package com.project.BookStore.services.impl;
 
 import com.project.BookStore.models.Author;
 import com.project.BookStore.models.AuthorInput;
-import com.project.BookStore.models.Book;
-import com.project.BookStore.models.BookInput;
-import com.project.BookStore.models.enums.Category;
 import com.project.BookStore.repositories.AuthorRepository;
 import com.project.BookStore.repositories.BookRepository;
 import com.project.BookStore.services.AuthorService;
