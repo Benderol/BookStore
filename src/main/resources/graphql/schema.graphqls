@@ -1,0 +1,48 @@
+type Query{
+    getAllAuthors:[Author!]
+    getAllBooks:[Book!]
+    getAuthorByBookTitle(title:String!):Author
+    getAuthorsBooks(username:String!):[Book!]
+    getBooksByCategory(category:Category!):[Book!]
+}
+
+type Mutation{
+    createAuthor(author:AuthorInput!):String!
+    addBookToAuthor(username:String!, book:BookInput!):String!
+    deleteAuthorsBook(username:String!, title:String!):String!
+    deleteAuthor(username:String!):String!
+}
+
+type Author{
+    id:ID!
+    username:String!
+    password:String!
+    role:Role!
+    books:[Book!]
+}
+
+type Book{
+    id:ID!
+    title:String!
+    category:Category!
+    author:Author!
+}
+
+input AuthorInput{
+    username:String!
+    password:String!
+    role:Role!
+}
+
+input BookInput{
+    title:String!
+    category:Category!
+}
+
+enum Role{
+    ADMIN, USER
+}
+
+enum Category{
+    ADVENTURE, FANTASY, HORROR
+}
